@@ -15,9 +15,31 @@ public class Node {
         this.children.add(child);
     }
 
+    // height(노드높이) 함수(메서드) 추가
+    public int height() {
+        if (children.isEmpty()) {
+            return 0;
+        }
+
+        int maxHeight = 0;
+
+        for (Node child : children) {
+            int childHeight = child.height();
+
+            if (childHeight > maxHeight) {
+                maxHeight = childHeight;
+            }
+        }
+
+        return maxHeight + 1;
+    }
+
+  
+    // hasChild (자식노드 존재 확인) 함수(메서드) 추가
     public boolean hasChild() {
         return !children.isEmpty();
     }
+  
 
     // DFS (깊이 우선 탐색) 메서드 추가
     public void dfs() {
