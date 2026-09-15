@@ -15,6 +15,10 @@ public class Node {
         this.children.add(child);
     }
 
+    public boolean hasChild() {
+        return !children.isEmpty();
+    }
+
     // DFS (깊이 우선 탐색) 메서드 추가
     public void dfs() {
         // 1. 현재 노드의 라벨(이름)을 출력합니다.
@@ -26,3 +30,4 @@ public class Node {
         }
     }
 }
+
